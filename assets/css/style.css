@@ -1,0 +1,1210 @@
+/**
+* Template Name: Reveal (Simplified Apple Aesthetic)
+* Updated: Sep 18 2023 with Bootstrap v5.3.2
+* Original Template URL: https://bootstrapmade.com/reveal-bootstrap-corporate-template/
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+* -----
+* Refactored for a cleaner, Apple-inspired aesthetic.
+*/
+
+/*--------------------------------------------------------------
+# General & Typography
+--------------------------------------------------------------*/
+body {
+  background-color: #fff;
+  color: #1d1d1f; /* Apple's primary text color */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* System font stack */
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: #007aff; /* Apple's standard blue link color */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover,
+a:focus {
+  color: #0056b3; /* Darker blue on hover */
+  text-decoration: underline; /* Simple underline on hover */
+  outline: none;
+}
+
+p {
+  padding: 0;
+  margin: 0 0 20px 0; /* Slightly reduced default paragraph margin */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* Consistent system font */
+  font-weight: 600; /* Slightly bolder headings */
+  margin: 0 0 25px 0;
+  padding: 0;
+  color: #1d1d1f; /* Consistent heading color */
+  line-height: 1.3;
+}
+
+h1 { font-size: 2.5rem; font-weight: 700; } /* Example: Adjust sizes as needed */
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+
+/*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+.back-to-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 20px;
+  bottom: 20px;
+  z-index: 996;
+  background: rgba(0, 0, 0, 0.7); /* Darker, semi-transparent */
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* Circular */
+  transition: all 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-to-top i {
+  font-size: 20px; /* Smaller icon */
+  color: #fff;
+  line-height: 0;
+}
+
+.back-to-top:hover {
+  background: rgba(0, 0, 0, 0.9);
+  color: #fff;
+}
+
+.back-to-top.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*--------------------------------------------------------------
+# Top Bar (Simplified - Consider Removing for true Apple feel)
+--------------------------------------------------------------*/
+#topbar {
+  background: #f8f8f8; /* Light gray background */
+  border-bottom: 1px solid #e8e8e8; /* Subtle border */
+  font-size: 14px;
+  padding: 0;
+  height: 40px;
+  line-height: 40px; /* Vertically center content */
+  color: #555; /* Gray text */
+}
+
+#topbar .contact-info i {
+  font-style: normal;
+  color: #555; /* Match text color */
+  margin-right: 5px;
+}
+
+#topbar .contact-info i a,
+#topbar .contact-info i span {
+  padding-left: 5px;
+  color: #555; /* Consistent gray */
+}
+
+#topbar .contact-info i a {
+  line-height: inherit; /* Inherit line-height */
+  transition: color 0.3s ease;
+}
+
+#topbar .contact-info i a:hover {
+  color: #007aff; /* Use standard link hover */
+  text-decoration: none;
+}
+
+#topbar .social-links a {
+  color: #555;
+  padding: 0 12px; /* Slightly reduced padding */
+  display: inline-block;
+  line-height: 1;
+  border: none; /* Remove borders */
+  transition: color 0.3s ease;
+}
+
+#topbar .social-links a:hover {
+  color: #007aff; /* Use standard link hover */
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header {
+  height: 70px; /* Adjusted height */
+  transition: all 0.3s ease;
+  z-index: 997;
+  background: rgba(255, 255, 255, 0.95); /* Slightly transparent white */
+  backdrop-filter: blur(10px); /* Add blur for modern effect (check browser support) */
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Softer shadow */
+  position: sticky; /* Make header sticky */
+  top: 0;
+  width: 100%;
+}
+
+#header #logo h1 {
+  font-size: 28px; /* Reduced size */
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+}
+
+#header #logo h1 a,
+#header #logo h1 a span {
+  color: #1d1d1f; /* Consistent dark text */
+  transition: color 0.3s ease;
+}
+#header #logo h1 a:hover {
+  text-decoration: none;
+  color: #555;
+}
+
+#header #logo img {
+  padding: 0;
+  margin: 0;
+  max-height: 40px; /* Adjust if using an image logo */
+}
+
+@media (max-width: 768px) {
+  #header {
+    height: 60px;
+  }
+  #header #logo h1 {
+    font-size: 24px;
+  }
+  #header #logo img {
+    max-height: 30px;
+  }
+}
+
+/* Adjust content position when header is sticky */
+.scrolled-offset {
+  margin-top: 70px; /* Match header height */
+}
+@media (max-width: 768px) {
+  .scrolled-offset {
+    margin-top: 60px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+.navbar {
+  padding: 0;
+}
+
+.navbar ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.navbar li {
+  position: relative;
+}
+
+.navbar a,
+.navbar a:focus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0 10px 24px; /* Adjusted padding */
+  font-size: 15px;
+  font-weight: 500; /* Slightly lighter weight */
+  color: #1d1d1f; /* Dark text */
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.navbar a i,
+.navbar a:focus i {
+  font-size: 12px;
+  line-height: 0;
+  margin-left: 5px;
+}
+
+.navbar a:hover,
+.navbar .active,
+.navbar .active:focus,
+.navbar li:hover>a {
+  color: #007aff; /* Standard link blue */
+  text-decoration: none; /* No underline here */
+}
+
+/* Dropdown basic structure - simplified styling */
+.navbar .dropdown ul {
+  display: block;
+  position: absolute;
+  left: 14px;
+  top: calc(100% + 15px); /* Increased distance */
+  margin: 0;
+  padding: 10px 0;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  background: #fff;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); /* Softer shadow */
+  transition: opacity 0.3s ease, visibility 0.3s ease, top 0.3s ease;
+  border-radius: 8px; /* Rounded corners */
+}
+
+.navbar .dropdown ul li {
+  min-width: 180px; /* Adjusted width */
+}
+
+.navbar .dropdown ul a {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 400; /* Normal weight */
+  color: #1d1d1f;
+}
+
+.navbar .dropdown ul a i {
+  font-size: 12px;
+}
+
+.navbar .dropdown ul a:hover,
+.navbar .dropdown ul .active:hover,
+.navbar .dropdown ul li:hover>a {
+  color: #007aff;
+  background-color: #f8f8f8; /* Subtle background hover */
+}
+
+.navbar .dropdown:hover>ul {
+  opacity: 1;
+  top: 100%;
+  visibility: visible;
+}
+
+/* Nested Dropdowns - simplified */
+.navbar .dropdown .dropdown ul {
+  top: 0;
+  left: calc(100% - 10px); /* Adjusted position */
+  visibility: hidden;
+  border-radius: 8px;
+}
+
+.navbar .dropdown .dropdown:hover>ul {
+  opacity: 1;
+  top: -10px; /* Align better vertically */
+  left: 100%;
+  visibility: visible;
+}
+
+@media (max-width: 1366px) {
+  .navbar .dropdown .dropdown ul {
+    left: -90%;
+  }
+  .navbar .dropdown .dropdown:hover>ul {
+    left: -100%;
+  }
+}
+
+/* Mobile Navigation Toggle */
+.mobile-nav-toggle {
+  color: #1d1d1f; /* Dark icon */
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
+  line-height: 0;
+  transition: color 0.3s ease;
+}
+.mobile-nav-toggle:hover {
+  color: #007aff;
+}
+
+/* Simplified Mobile Nav Appearance */
+.navbar-mobile {
+  position: fixed;
+  overflow: hidden;
+  inset: 0; /* top, right, bottom, left = 0 */
+  background: rgba(255, 255, 255, 0.98); /* Almost opaque white */
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  transition: 0.3s;
+  z-index: 999;
+}
+
+.navbar-mobile .mobile-nav-toggle {
+  position: absolute;
+  top: 20px; /* More padding */
+  right: 20px;
+  color: #1d1d1f; /* Keep consistent */
+}
+
+.navbar-mobile ul {
+  display: block;
+  position: absolute;
+  top: 60px; /* Position below toggle */
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
+  padding: 10px 0;
+  background-color: transparent; /* Inherit background */
+  overflow-y: auto;
+  transition: 0.3s;
+  box-shadow: none; /* No shadow */
+  border: none; /* No border */
+}
+
+.navbar-mobile a,
+.navbar-mobile a:focus {
+  padding: 12px 20px; /* More vertical padding */
+  font-size: 16px; /* Slightly larger */
+  color: #1d1d1f;
+  font-weight: 500;
+}
+
+.navbar-mobile a:hover,
+.navbar-mobile .active,
+.navbar-mobile li:hover>a {
+  color: #007aff;
+  background-color: transparent; /* No background color change */
+}
+
+.navbar-mobile .dropdown ul {
+  position: static;
+  display: none;
+  margin: 10px 20px;
+  padding: 10px 0;
+  z-index: 99;
+  opacity: 1;
+  visibility: visible;
+  background: #fff; /* White background for dropdown */
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  border-radius: 8px; /* Rounded corners */
+}
+
+.navbar-mobile .dropdown>.dropdown-active {
+  display: block;
+}
+
+@media (max-width: 991px) {
+  .mobile-nav-toggle {
+    display: block;
+  }
+  .navbar ul {
+    display: none;
+  }
+}
+
+/*--------------------------------------------------------------
+# Hero Section (Requires clean background image/color via HTML/inline style)
+--------------------------------------------------------------*/
+#hero {
+  width: 100%;
+  height: 70vh; /* Adjust height as needed */
+  position: relative;
+  padding: 0;
+  background-color: #f8f8f8; /* Fallback background */
+  /* background: url(...) no-repeat center center; */ /* Set image via HTML/inline style */
+  /* background-size: cover; */
+  display: flex; /* Use flex to center content */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Remove the overlay */
+/* #hero::before { display: none; } */
+
+#hero .hero-content {
+  /* position, z-index etc. handled by #hero flex */
+  padding: 0 15px;
+}
+
+#hero .hero-content h2 {
+  color: #1d1d1f; /* Dark text */
+  margin-bottom: 20px;
+  font-size: 3rem; /* Larger size */
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+#hero .hero-content h2 span {
+  color: #007aff; /* Accent color for span */
+  text-decoration: none; /* Remove underline */
+}
+
+@media (max-width: 767px) {
+  #hero { height: 60vh; }
+  #hero .hero-content h2 {
+    font-size: 2.2rem;
+  }
+}
+
+/* Simplified Buttons */
+#hero .hero-content .btn-get-started,
+#hero .hero-content .btn-projects {
+  font-family: inherit; /* Use body font */
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.5px; /* Less spacing */
+  display: inline-block;
+  padding: 12px 28px; /* Adjusted padding */
+  border-radius: 8px; /* Rounded corners */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 10px 5px;
+  color: #fff;
+  border: none; /* No borders */
+  cursor: pointer;
+}
+
+#hero .hero-content .btn-get-started {
+  background-color: #007aff; /* Blue button */
+}
+#hero .hero-content .btn-get-started:hover {
+  background-color: #0056b3; /* Darker blue */
+  color: #fff;
+}
+
+#hero .hero-content .btn-projects {
+  background-color: #e8e8e8; /* Light gray button */
+  color: #1d1d1f; /* Dark text */
+}
+#hero .hero-content .btn-projects:hover {
+  background-color: #d8d8d8; /* Slightly darker gray */
+  color: #1d1d1f;
+}
+
+/* Remove slider functionality styles if not using slider */
+/* #hero .hero-slider { display: none; } */
+
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+section {
+  padding: 80px 0; /* Increased padding */
+  overflow: hidden;
+}
+
+/* Sections Header */
+.section-header {
+  margin-bottom: 50px; /* Increased margin */
+  text-align: center; /* Center section headers */
+}
+
+.section-header h2 {
+  font-size: 2.2rem; /* Consistent size */
+  color: #1d1d1f;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 0; /* Remove padding */
+  margin-bottom: 15px; /* Add margin below title */
+}
+
+.section-header h2::before {
+  display: none; /* Remove underline */
+}
+
+.section-header p {
+  padding: 0;
+  margin: 0 auto; /* Center description */
+  max-width: 600px; /* Limit width for readability */
+  color: #555; /* Grayish color for description */
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+/*--------------------------------------------------------------
+# Breadcrumbs (Simplified)
+--------------------------------------------------------------*/
+.breadcrumbs {
+  padding: 15px 0;
+  background-color: #f8f8f8; /* Light gray background */
+  min-height: auto;
+  border-bottom: 1px solid #e8e8e8; /* Subtle border */
+}
+
+.breadcrumbs h2 {
+  font-size: 1.2rem; /* Smaller size */
+  font-weight: 600;
+  margin: 0;
+  color: #1d1d1f;
+}
+
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  color: #555; /* Gray text */
+}
+
+.breadcrumbs ol li+li {
+  padding-left: 8px;
+}
+
+.breadcrumbs ol li+li::before {
+  display: inline-block;
+  padding-right: 8px;
+  color: #999; /* Lighter gray for separator */
+  content: "/";
+}
+.breadcrumbs ol li a {
+  color: #007aff; /* Link color */
+}
+.breadcrumbs ol li a:hover {
+  color: #0056b3;
+}
+
+/*--------------------------------------------------------------
+# About Section
+--------------------------------------------------------------*/
+#about {
+  padding: 80px 0; /* Consistent padding */
+}
+
+#about .about-img {
+  overflow: hidden;
+  margin-bottom: 30px; /* Add space below image on mobile */
+}
+
+#about .about-img img {
+  /* margin-left: -15px; */ /* Remove negative margin */
+  max-width: 100%;
+  border-radius: 8px; /* Optional: slightly rounded corners */
+}
+
+#about .content h2 { /* Use h3 for semantic correctness usually */
+  color: #1d1d1f;
+  font-weight: 700;
+  font-size: 2rem; /* Adjust size */
+  margin-bottom: 15px;
+}
+
+#about .content h3 { /* This was the italic subtitle */
+  color: #555;
+  font-weight: 400; /* Normal weight */
+  font-size: 1.2rem;
+  line-height: 1.6;
+  font-style: normal; /* Remove italic */
+  margin-bottom: 25px;
+}
+
+#about .content p {
+  line-height: 1.7;
+  color: #333; /* Slightly lighter than main text */
+}
+
+#about .content ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px; /* Add space above list */
+}
+
+#about .content ul li {
+  padding: 5px 0 5px 25px; /* Indent list items */
+  position: relative;
+}
+
+#about .content ul i { /* Use a simple bullet point or check */
+  position: absolute;
+  left: 0;
+  top: 9px; /* Adjust vertical alignment */
+  font-size: 14px; /* Smaller icon */
+  color: #007aff; /* Accent color */
+}
+
+/*--------------------------------------------------------------
+# Services Section
+--------------------------------------------------------------*/
+#services {
+  padding: 60px 0; /* Slightly less padding */
+  background-color: #f8f8f8; /* Light gray background */
+}
+
+#services .box {
+  padding: 30px; /* Reduced padding */
+  background: #fff; /* White box */
+  transition: none; /* Remove hover effect */
+  height: 100%;
+  border-radius: 8px; /* Rounded corners */
+  text-align: center; /* Center content */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+}
+
+/* Remove hover effects */
+/* #services .box:hover { box-shadow: ... transform: ... } */
+
+#services .box .icon {
+  float: none; /* Remove float */
+  margin-bottom: 20px; /* Space below icon */
+}
+
+#services .box .icon i {
+  color: #007aff; /* Accent color for icon */
+  font-size: 48px; /* Reduced size */
+  line-height: 1;
+  margin-top: 0; /* Reset margin */
+}
+
+/* Remove gradient */
+/* #services .box .icon i:before { background: ... } */
+
+#services .box h4 {
+  margin-left: 0; /* Remove margin */
+  font-weight: 600;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+#services .box h4 a {
+  color: #1d1d1f; /* Dark text */
+  transition: color 0.3s ease;
+}
+#services .box h4 a:hover {
+  color: #007aff; /* Accent color hover */
+  text-decoration: none;
+}
+
+#services .box p {
+  font-size: 1rem;
+  margin-left: 0; /* Remove margin */
+  margin-bottom: 0;
+  line-height: 1.6;
+  color: #555; /* Grayish text */
+}
+
+/*--------------------------------------------------------------
+# Clients Section (Assuming Logo Carousel)
+--------------------------------------------------------------*/
+#clients {
+  padding: 40px 0; /* Reduced padding */
+}
+
+#clients img {
+  max-width: 100%; /* Ensure responsiveness */
+  opacity: 0.7; /* Slightly faded */
+  transition: opacity 0.3s ease;
+  padding: 15px 0;
+  filter: grayscale(80%); /* Make logos grayscale */
+}
+
+#clients img:hover {
+  opacity: 1;
+  filter: grayscale(0%); /* Full color on hover */
+}
+
+/* Simplified Swiper Pagination */
+#clients .swiper-pagination {
+  margin-top: 30px; /* More space */
+  position: relative;
+}
+
+#clients .swiper-pagination .swiper-pagination-bullet {
+  width: 8px; /* Smaller dots */
+  height: 8px;
+  background-color: #ccc; /* Light gray inactive */
+  opacity: 1;
+  border: none; /* Remove border */
+  margin: 0 4px !important; /* Ensure spacing */
+  transition: background-color 0.3s ease;
+}
+
+#clients .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #555; /* Darker gray active */
+}
+
+/*--------------------------------------------------------------
+# Portfolio / Photos Section
+--------------------------------------------------------------*/
+#photos {
+  padding: 60px 0;
+}
+
+/* Simplified Filters */
+#photos #photos-flters {
+  padding: 0;
+  margin: 0 auto 40px auto;
+  list-style: none;
+  text-align: center;
+}
+
+#photos #photos-flters li {
+  cursor: pointer;
+  display: inline-block;
+  padding: 8px 20px; /* Adjusted padding */
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1;
+  color: #555; /* Gray text */
+  margin: 0 5px 10px 5px;
+  transition: all 0.3s ease-in-out;
+  background: #f0f0f0; /* Light gray background */
+  border-radius: 15px; /* Pill shape */
+  border: 1px solid transparent; /* Placeholder for potential border */
+}
+
+#photos #photos-flters li:hover {
+  color: #1d1d1f;
+  background: #e8e8e8; /* Slightly darker gray */
+}
+#photos #photos-flters li.filter-active {
+  color: #007aff; /* Accent color active */
+  background: #e6f2ff; /* Light blue background */
+}
+
+/* Portfolio Item - Simplified Hover */
+#photos .photos-item {
+  margin-bottom: 30px;
+  overflow: hidden;
+  position: relative; /* Needed for potential simple overlay/link */
+  border-radius: 8px; /* Optional rounded corners */
+}
+
+#photos .photos-item img {
+  width: 100%; /* Ensure image fills container */
+  height: auto;
+  transition: transform 0.4s ease; /* Simple scale effect on hover */
+}
+
+/* Remove complex info overlay */
+/* #photos .photos-item .photos-info { ... } */
+
+#photos .photos-item:hover img {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Optional: Add a simple link icon on hover */
+/*
+#photos .photos-item::after {
+  content: '\F4C8'; // Example: Bootstrap Icons link icon
+  font-family: "bootstrap-icons";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  color: #fff;
+  background-color: rgba(0, 122, 255, 0.7); // Semi-transparent blue overlay
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 8px;
+}
+#photos .photos-item:hover::after {
+  opacity: 1;
+}
+*/
+
+
+/*--------------------------------------------------------------
+# Portfolio Details (If used)
+--------------------------------------------------------------*/
+/* Apply similar simplification: remove shadows, use system fonts, clean spacing */
+.photos-details {
+  padding-top: 40px;
+}
+.photos-details .photos-details-slider img {
+  width: 100%;
+  border-radius: 8px;
+}
+/* Simplify swiper pagination like #clients */
+.photos-details .photos-details-slider .swiper-pagination .swiper-pagination-bullet {
+   width: 8px; height: 8px; background-color: #ccc; opacity: 1; border: none;
+}
+.photos-details .photos-details-slider .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #555;
+}
+
+.photos-details .photos-info {
+  padding: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  margin-top: 30px; /* Space if slider is above */
+  border-radius: 8px;
+}
+.photos-details .photos-info h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee; /* Keep subtle divider */
+}
+.photos-details .photos-info ul {
+  list-style: none; padding: 0; font-size: 1rem;
+}
+.photos-details .photos-info ul li { margin-bottom: 10px; }
+.photos-details .photos-info ul strong { margin-right: 10px; color: #1d1d1f; }
+
+.photos-details .photos-description {
+  padding-top: 30px;
+}
+.photos-details .photos-description h2 {
+  font-size: 1.8rem; font-weight: 600; margin-bottom: 20px;
+}
+.photos-details .photos-description p {
+  padding: 0; line-height: 1.7; color: #333;
+}
+
+/*--------------------------------------------------------------
+# Testimonials Section
+--------------------------------------------------------------*/
+#testimonials {
+  padding: 60px 0;
+  background-color: #f8f8f8; /* Light gray background */
+}
+
+#testimonials .testimonial-item {
+  box-sizing: content-box;
+  padding: 40px; /* Increased padding */
+  margin: 0 15px; /* Remove top/bottom margin if using swiper */
+  text-align: center;
+  min-height: auto; /* Let content define height */
+  background: #fff; /* White background */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  border-radius: 8px;
+}
+
+#testimonials .testimonial-item .testimonial-img {
+  width: 70px; /* Smaller image */
+  height: 70px; /* Ensure aspect ratio */
+  border-radius: 50%;
+  border: none; /* Remove border */
+  margin: 0 auto 15px auto; /* Centered, space below */
+  object-fit: cover; /* Ensure image covers */
+}
+
+#testimonials .testimonial-item h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 5px 0;
+  color: #1d1d1f;
+}
+
+#testimonials .testimonial-item h4 {
+  font-size: 0.9rem;
+  color: #777; /* Lighter gray for designation */
+  margin: 0 0 15px 0; /* Space below designation */
+}
+
+/* Simplify quotes */
+#testimonials .testimonial-item .quote-sign-left,
+#testimonials .testimonial-item .quote-sign-right {
+  display: none; /* Hide quote icons */
+}
+
+#testimonials .testimonial-item p {
+  font-style: normal; /* Remove italic */
+  margin: 0 auto;
+  color: #333; /* Main quote text color */
+  line-height: 1.7;
+  position: relative;
+  padding: 0 10px; /* Add some padding */
+}
+/* Optional: Add subtle quote marks */
+#testimonials .testimonial-item p::before {
+  content: "“";
+  position: absolute;
+  left: -5px;
+  top: -10px;
+  font-size: 2rem;
+  color: #ccc;
+  opacity: 0.8;
+}
+#testimonials .testimonial-item p::after {
+ content: "”";
+  position: absolute;
+  right: -5px;
+  bottom: -15px;
+  font-size: 2rem;
+  color: #ccc;
+  opacity: 0.8;
+}
+
+/* Simplified Swiper Pagination */
+#testimonials .swiper-pagination {
+  margin-top: 30px;
+  position: relative;
+}
+#testimonials .swiper-pagination .swiper-pagination-bullet {
+   width: 8px; height: 8px; background-color: #ccc; opacity: 1; border: none; margin: 0 4px !important;
+}
+#testimonials .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #555;
+}
+
+
+/*--------------------------------------------------------------
+# Call To Action Section
+--------------------------------------------------------------*/
+#call-to-action {
+  background: #f8f8f8; /* Light gray background */
+  padding: 60px 0;
+  text-align: center; /* Center align content */
+}
+
+#call-to-action .cta-title {
+  color: #1d1d1f;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+#call-to-action .cta-text {
+  color: #555;
+  margin-bottom: 25px;
+  line-height: 1.7;
+  max-width: 600px; /* Limit width */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Removed empty ruleset for #call-to-action .cta-btn-container */
+
+#call-to-action .cta-btn {
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 10px 5px;
+  border: none;
+  color: #fff;
+  background-color: #007aff; /* Blue button */
+  cursor: pointer;
+}
+
+#call-to-action .cta-btn:hover {
+  background-color: #0056b3; /* Darker blue */
+  color: #fff;
+}
+
+/*--------------------------------------------------------------
+# Team Section
+--------------------------------------------------------------*/
+#team {
+  background: #fff;
+  padding: 60px 0;
+}
+
+#team .member {
+  text-align: center;
+  margin-bottom: 40px; /* More space between members */
+}
+
+#team .member .pic {
+  overflow: hidden;
+  text-align: center;
+  margin-bottom: 15px; /* Space between pic and details */
+  border-radius: 50%; /* Make image circular */
+  width: 150px; /* Fixed size */
+  height: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Subtle shadow */
+}
+
+#team .member .pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure image covers */
+}
+
+#team .member .details {
+  background: transparent; /* Remove background */
+  color: inherit; /* Inherit text color */
+  padding: 0; /* Remove padding */
+  border-radius: 0; /* Remove radius */
+}
+
+#team .member h4 {
+  font-weight: 600;
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+  color: #1d1d1f;
+}
+
+#team .member span {
+  font-style: normal; /* Remove italic */
+  display: block;
+  font-size: 0.95rem;
+  color: #555; /* Gray text for title */
+  margin-bottom: 10px; /* Space below title */
+}
+
+#team .member .social {
+  margin-top: 5px;
+}
+
+#team .member .social a {
+  color: #777; /* Gray social icons */
+  transition: color 0.3s ease;
+}
+#team .member .social a:hover {
+  color: #007aff; /* Accent blue on hover */
+}
+
+#team .member .social i {
+  font-size: 18px; /* Slightly larger icons */
+  margin: 0 8px; /* More space between icons */
+}
+
+/*--------------------------------------------------------------
+# Contact Section
+--------------------------------------------------------------*/
+#contact {
+  padding: 60px 0;
+}
+
+#contact .contact-info {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+#contact .contact-info i {
+  font-size: 32px; /* Smaller icon */
+  display: inline-block;
+  margin-bottom: 15px;
+  color: #007aff; /* Accent color */
+}
+
+#contact .contact-info address,
+#contact .contact-info p {
+  margin-bottom: 5px; /* Reduce space */
+  color: #333; /* Standard text color */
+  line-height: 1.6;
+}
+
+#contact .contact-info h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  font-weight: 600; /* Bolder */
+  text-transform: none; /* No uppercase */
+  color: #1d1d1f; /* Dark text */
+}
+
+#contact .contact-info a {
+  color: #007aff; /* Link color */
+}
+#contact .contact-info a:hover {
+  color: #0056b3;
+}
+
+/* Remove borders between contact info blocks */
+#contact .contact-address,
+#contact .contact-phone,
+#contact .contact-email {
+  margin-bottom: 30px; /* Consistent spacing */
+  padding: 0; /* Remove padding */
+  border: none; /* Remove borders */
+}
+
+/* Map styling (keep it simple) */
+#contact #google-map {
+  height: 350px; /* Increased height */
+  margin-bottom: 30px;
+  border-radius: 8px; /* Optional rounded corners */
+  overflow: hidden; /* Ensures border-radius applies */
+}
+
+/* Form Styling */
+#contact .php-email-form {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  padding: 30px;
+  border-radius: 8px;
+  background: #fff;
+}
+
+/* Hide default validation messages, handle with JS/server-side */
+#contact .php-email-form .validate,
+#contact .php-email-form .error-message,
+#contact .php-email-form .sent-message,
+#contact .php-email-form .loading {
+  display: none;
+  /* Consider adding simple text feedback via JS */
+}
+
+/* Input field styling */
+#contact .php-email-form input,
+#contact .php-email-form textarea {
+  padding: 12px 15px; /* Comfortable padding */
+  border-radius: 6px; /* Slightly rounded */
+  box-shadow: none;
+  font-size: 1rem;
+  border: 1px solid #ced4da; /* Standard light gray border */
+  transition: border-color 0.3s ease;
+  width: 100%; /* Ensure full width */
+  margin-bottom: 20px; /* Space between fields */
+}
+
+#contact .php-email-form input:focus,
+#contact .php-email-form textarea:focus {
+  border-color: #007aff; /* Blue border on focus */
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 0 2px rgba(0, 122, 255, 0.25); /* Subtle focus ring */
+}
+
+/* Submit button */
+#contact .php-email-form button[type=submit] {
+  background: #007aff; /* Blue background */
+  border: 0;
+  border-radius: 8px; /* Match button style */
+  padding: 12px 30px; /* Consistent padding */
+  color: #fff;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+#contact .php-email-form button[type=submit]:hover {
+  background: #0056b3; /* Darker blue */
+}
+
+/* Remove loading animation or replace with simpler one if needed */
+/* @keyframes animate-loading { ... } */
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+#footer {
+  background: #fff; /* White background */
+  padding: 40px 0 30px 0; /* Padding */
+  font-size: 14px;
+  border-top: 1px solid #e8e8e8; /* Subtle top border */
+}
+
+#footer .copyright {
+  text-align: center;
+  padding-top: 0; /* Remove top padding */
+  margin-bottom: 10px; /* Space below copyright */
+  color: #555; /* Gray text */
+}
+
+#footer .credits {
+  text-align: center;
+  font-size: 13px;
+  color: #777; /* Lighter gray text */
+}
+
+#footer .credits a {
+  color: #555; /* Match surrounding text */
+  transition: color 0.3s ease;
+}
+#footer .credits a:hover {
+  color: #007aff; /* Accent blue on hover */
+  text-decoration: underline;
+}
