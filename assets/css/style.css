@@ -421,21 +421,20 @@ h6 { font-size: 1rem; }
   position: relative;
   padding: 0;
   background-color: #f8f8f8; /* Fallback background */
-  /* background: url(...) no-repeat center center; */ /* Set image via HTML/inline style */
-  /* background-size: cover; */
   display: flex; /* Use flex to center content */
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  align-items: center; /* Vertically center content */
+  justify-content: center; /* Horizontally center content */
+  text-align: center; /* Center text inside */
+  flex-direction: column; /* Stack elements vertically */
+}
+
+#hero .hero-content {
+  max-width: 800px; /* Optional: Limit content width */
+  margin: 0 auto; /* Center content horizontally */
 }
 
 /* Remove the overlay */
 /* #hero::before { display: none; } */
-
-#hero .hero-content {
-  /* position, z-index etc. handled by #hero flex */
-  padding: 0 15px;
-}
 
 #hero .hero-content h2 {
   color: #1d1d1f; /* Dark text */
