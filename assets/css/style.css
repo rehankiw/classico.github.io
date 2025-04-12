@@ -969,9 +969,7 @@ section {
   margin-right: auto;
 }
 
-#call-to-action .cta-btn-container {
-  /* No special alignment needed if centered */
-}
+/* Removed empty ruleset for #call-to-action .cta-btn-container */
 
 #call-to-action .cta-btn {
   font-family: inherit;
