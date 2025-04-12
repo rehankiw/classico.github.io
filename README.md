@@ -1,2 +1,2 @@
 ﻿# Classico Website Project
-# Made with Fucking Love
+# Made with Love
